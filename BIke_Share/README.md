@@ -10,7 +10,9 @@
 
 You are a junior data analyst working in the marketing analyst team at Cyclistic, a bike-share company in Chicago. The director of marketing believes the company’s future success depends on maximizing the number of annual memberships. Therefore, your team wants to understand how casual riders and annual members use Cyclistic bikes differently. From these insights, your team will design a new marketing strategy to convert casual riders into annual members. But first, Cyclistic executives must approve your recommendations, so they must be backed up with compelling data insights and professional data visualizations.
 
-[[https://github.com/AaquibCodes/Analytics_Projects/blob/master/BIke_Share/Cyclistic.jpeg|width=400px]]
+
+![Cyclistic](https://user-images.githubusercontent.com/96247747/170041460-39bbc400-e6a1-440c-8aa2-7538f6853a97.jpeg)
+
 
 I have used the six steps of the data analysis process learned through out the 8 courses in the Google Data Analytics program to answer key business questions. Ask, prepare, process, analyze, share, and act.
 
@@ -27,7 +29,10 @@ I combined the separate files into one data frame using R. I then cleaned the da
 I calculated and summarized the data frame using functions such as mean, median, max, and min in R.Compared average ride length of each day of the week of each user type, analyzed ridership data by type and weekday, ridership data by type and month
 
 ## Share
-I created Column Chart using ggplot2 for Average Ride duration for weekday and month by member type.Exported the required versions of Data frames as csv file for more data visualizations in Tableau. I then combined the visualizations on a dashboard that can be viewed here.
+I created Column Chart using ggplot2 for Average Ride duration for weekday and month by member type.Exported the required versions of Data frames as csv file for more data visualizations in Tableau. I then combined the visualizations on a dashboard that can be viewed [here.](https://public.tableau.com/views/Bike_share_16533279294160/Dashboard1?:language=en-GB&:display_count=n&:origin=viz_share_link)
+
+![image](https://user-images.githubusercontent.com/96247747/170041891-d1a6cb75-efe0-4ace-b651-a8ac366f6052.png)
+
 
 It was interesting to see similar patterns in Tableau, and in R. To view my R code in GitHub, click here.
 
