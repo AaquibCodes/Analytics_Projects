@@ -6,6 +6,8 @@
 
 #### TOOLS USED: RStudio, Tableau
 
+#### Dataset: [Cyclistic](https://divvy-tripdata.s3.amazonaws.com/index.html)
+
 # Scenario
 
 You are a junior data analyst working in the marketing analyst team at Cyclistic, a bike-share company in Chicago. The director of marketing believes the company’s future success depends on maximizing the number of annual memberships. Therefore, your team wants to understand how casual riders and annual members use Cyclistic bikes differently. From these insights, your team will design a new marketing strategy to convert casual riders into annual members. But first, Cyclistic executives must approve your recommendations, so they must be backed up with compelling data insights and professional data visualizations.
@@ -31,10 +33,9 @@ I calculated and summarized the data frame using functions such as mean, median,
 ## Share
 I created Column Chart using ggplot2 for Average Ride duration for weekday and month by member type.Exported the required versions of Data frames as csv file for more data visualizations in Tableau. I then combined the visualizations on a dashboard that can be viewed [here.](https://public.tableau.com/views/Bike_share_16533279294160/Dashboard1?:language=en-GB&:display_count=n&:origin=viz_share_link)
 
-![image](https://user-images.githubusercontent.com/96247747/170041891-d1a6cb75-efe0-4ace-b651-a8ac366f6052.png)
+<h1 align="center">[image](https://user-images.githubusercontent.com/96247747/170041891-d1a6cb75-efe0-4ace-b651-a8ac366f6052.png)</h1>
 
-
-It was interesting to see similar patterns in Tableau, and in R. To view my R code in GitHub, click here.
+It was interesting to see similar patterns in Tableau, and in R. To view my R code in GitHub, click [here.](https://github.com/AaquibCodes/Analytics_Projects/blob/0f6b7a7447e720fb4e257974090e52ca7baae502/BIke_Share/Data_Wrangling_Exploration.R)
 
 ## Act
 In this final step, my task was to state and act on key findings by providing recommendations that will help the marketing director (my manager) maximize profits.
