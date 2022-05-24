@@ -65,5 +65,5 @@ Overall, Casual riders take less number of rides but for longer durations. Casua
 
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/AaquibCodes/)
+[![tableau](https://user-images.githubusercontent.com/96247747/170055377-c6a57c37-3314-41e9-9828-2ee0b7fcafb5.png)](https://public.tableau.com/app/profile/aaquibviz/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aaquibkudchikar/)
-
