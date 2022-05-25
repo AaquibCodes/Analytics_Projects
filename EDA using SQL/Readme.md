@@ -139,7 +139,7 @@ So three dodge cars are satisfying these conditions and as we can see that both 
     set price = 12977
     where price = 0; -- ALL clean now !!!
     
-### We have now cleaned the data and are ready for the analysis!!!!
+### We have now cleaned the data and are ready for the analysis!!!! :tada: :tada:
 
 ***==========================================================================================***
 
@@ -179,3 +179,5 @@ So three dodge cars are satisfying these conditions and as we can see that both 
 *So, the result of this query, tells us that the customers buy **hatchback models from Toyota**, further drilling down the data we understood that the customers prefer buying **Toyota cars in the hatchback segment and of gas type**.*
 
 *With this analysis of the data we are now aware of which type of car to keep in stock*
+
+# Thank you for reading
