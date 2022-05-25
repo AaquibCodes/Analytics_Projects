@@ -3,13 +3,12 @@
 SQL stands for <b>Structured Query Language</b>. It is the standard language to interact with databases. SQL is the most important tool, a data analyst uses to manipulate and gain insights from the data. In this project, we will try to clean, process, and analyze the data, for this purpose we will use this [automobile data](https://archive.ics.uci.edu/ml/datasets/automobile) from ***UCI Machine Learning Repository***.
 
 For this project, I will be using MySQL Workbench. MySQL is an open-source relational database management system. So that now we have our software setup, then let’s import the dataset into our database.
-<br />
+
+`
+
 <div align='center'>
 <img src="https://user-images.githubusercontent.com/96247747/170234750-2b374033-7c94-4f16-9355-ad4c9e57b95a.jpg")></img>
 </div>
-<br />
-
-***==========================================================================================***
 
 # Importing Data
 
@@ -22,35 +21,32 @@ To import the data in MySQL workbench follow the given steps, as the dataset is 
 - In the settings window, keep the values as it is and click on Next.<br/>
 - Finally, click on the Next button to execute the task, and the dataset is successfully imported!!!<br/>
 
-***==========================================================================================***
-
 # Objective
 
 Let’s say you have started a used car dealership venture. You want to know which cars customers are mostly to purchase so that you know which cars to keep in stock. So that now our objective is clear let’s analyze the data!!!
-
-***==========================================================================================***
 
 # Data Cleaning
 
 To view the structure of your Dataset press the "i" button corresponding to your Dataset in Navigator window under Schemas tab.
 
-> We can see that the data set has 20 Columns and 203 Rows
+`
 
-<br />
+> We can see that the data set has 20 Columns and 203 Rows
+<br/>
 <div align='center'>
 <img src="https://user-images.githubusercontent.com/96247747/170242008-9f4cfe02-4f3c-40e7-a58f-9b3071b5a0f0.PNG")></img>
 </div>
-<br />
+<br/>
+
+`
 
 > Below query is to view the Rows and Col values of the entire Dataset
 
     SELECT *
     FROM automobile_data;
 
-
- ### Now, let’s inspect each column and check for missing values, outliers, or any spelling mistakes present in the data which can hinder the analysis.
-
-
+### Now, let’s inspect each column and check for missing values, outliers, or any spelling mistakes present in the data which can hinder the analysis.
+`
 > Let’s find out how many unique car manufacturers do we have
     
     -- Checking for NULL or Empty values in make col
@@ -61,14 +57,16 @@ To view the structure of your Dataset press the "i" button corresponding to your
     select count(distinct make)
     from automobile_data; -- There are 21 Unique Car Manufacturers.
     
-*There are <b>21 unique car manufacturers available</b>. And we have to find top 5 cars customers mostly purchase. While dealing with categorical data, the best way is to find the unique values which will help us to narrow down whether there are any errors in spelling or not. So here there are no errors and missing values present in this column.*
+*There are **21 unique car manufacturers available**. and we have to find top 5 cars customers mostly purchase. While dealing with categorical data, the best way is to find the unique values which will help us to narrow down whether there are any errors in spelling or not. So here there are no errors and missing values present in this column.*
+
+`
 
 > Now, let's inspect column num_of_doors
 
     select *
     from automobile_Data
     where num_of_doors is null or num_of_doors = '';
- 
+
 *So there are two missing values in this column, one car of brand dodge and Mazda each have missing values in the num_of_doors column. We will try to substitute the missing values, by looking at cars of the same features.*
 
     select * 
@@ -92,6 +90,8 @@ So three dodge cars are satisfying these conditions and as we can see that both 
     set num_of_doors='four'
     where make='mazda' and body_style='sedan' and drive_wheels='fwd' and engine_location='front';
    
+`
+
 > Now, moving on to the next column let’s inspect the drive_wheels column, as this is also a categorical column let’s find out the distinct values present.*
 
     select *
@@ -109,6 +109,8 @@ So three dodge cars are satisfying these conditions and as we can see that both 
     set drive_wheels=trim(drive_wheels)
     where length(drive_wheels) > 3; -- Cool !! all clean now
 
+`
+
 > In num_of_cylinders column, **‘two’** is misspelled as **‘tow’** so we need to correct this mistake and update the table with the correct value using the UPDATE statement.
 
     select distinct num_of_cylinders
@@ -116,7 +118,9 @@ So three dodge cars are satisfying these conditions and as we can see that both 
     update automobile_data 
     set num_of_cylinders = 'two'
     where num_of_cylinders = 'tow'; -- Looks Good :)
-    
+
+`
+
 > So, there are two more columns, we need to check for — compression_ratio and price. Both columns have continuous values, so let’s check the range of values and try to see if any outlier is present or not. The below query will return the values for compression_ratio which outside for the range provided in attribute informaion of the dataset. **compression-ratio: 7 to 23.** Outliers will be deleted using **Delete statement**
 
     select compression_ratio
@@ -124,7 +128,9 @@ So three dodge cars are satisfying these conditions and as we can see that both 
     where compression_ratio not between 7 and 23; -- Compression Ration 70 is an outlier and hence need to be deleted
     delete from automobile_data
     where compression_ratio =70; -- Looks good now.
-   
+
+`
+
 > Let’s inspect the last column that is the price column.Price range should be **price: 5118 to 45400**
 
     select price
@@ -139,9 +145,7 @@ So three dodge cars are satisfying these conditions and as we can see that both 
     set price = 12977
     where price = 0; -- ALL clean now !!!
     
-### We have now cleaned the data and are ready for the analysis!!!! :tada: :tada:
-
-***==========================================================================================***
+### We have now cleaned the data and are ready for the analysis!!!! :tada: :tada: 
 
 # Analyzing the data
 
@@ -149,6 +153,8 @@ So three dodge cars are satisfying these conditions and as we can see that both 
 
 * To find the top 5 cars customers bought based on make.
 * To find the top 5 cars based on body_style.
+
+`
 
 > Let’s start with the first question, to find the top 5 cars based on make we will execute the following query.
 
@@ -158,7 +164,9 @@ So three dodge cars are satisfying these conditions and as we can see that both 
     order by make_sold desc
     limit 5;
     
-*This query basically retrieves the count of cars for brand and sorts the result by descending order of count. As we can see in the result set most customers prefer to buy cars from **Toyota**.
+*This query basically retrieves the count of cars for brand and sorts the result by descending order of count. As we can see in the result set most customers prefer to buy cars from **Toyota**.*
+
+`
 
 > Now let’s find out the top 5 cars based on body style.
 
@@ -180,4 +188,8 @@ So three dodge cars are satisfying these conditions and as we can see that both 
 
 *With this analysis of the data we are now aware of which type of car to keep in stock*
 
-# Thank you for reading
+## Thank you for reading  :hatched_chick: :panda_face: :green_heart: :hibiscus:
+
+# Links
+[![PORTFOLIO ICON](https://user-images.githubusercontent.com/96247747/170297254-e6cd14e4-d03e-4859-ae33-16b14872af85.PNG)](https://github.com/AaquibCodes/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aaquibkudchikar/)
